@@ -1,0 +1,16 @@
+{
+  "short_summary": "Review first: the Spanish drops the request for the order number.",
+  "accuracy_rating": "Low",
+  "confidence_score": 95,
+  "tone_check": "Professional",
+  "risky_phrases": [],
+  "missing_meaning": [
+    "The request for the customer to send their order number",
+    "The statement that the company will review the issue"
+  ],
+  "added_meaning": [],
+  "suggested_correction": "Lamentamos que su pedido se haya retrasado. Por favor, env\u00edenos su n\u00famero de pedido para que podamos revisar el problema.",
+  "back_translation": "We are sorry that your order has been delayed.",
+  "send_recommendation": "Review First",
+  "explanation": "The Spanish translation only includes the apology and omits the key call-to-action asking the customer to provide their order number so the issue can be reviewed. This missing information is essential for resolving the customer's concern."
+}

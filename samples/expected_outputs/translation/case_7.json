@@ -1,0 +1,22 @@
+{
+  "short_summary": "Do not send: the Spanish reverses the meaning and says the order was cancelled.",
+  "accuracy_rating": "Low",
+  "confidence_score": 99,
+  "tone_check": "Professional",
+  "risky_phrases": [
+    "fue cancelado",
+    "no ser\u00e1 enviado"
+  ],
+  "missing_meaning": [
+    "Order has shipped",
+    "Order will arrive soon"
+  ],
+  "added_meaning": [
+    "Order was cancelled",
+    "Order will not be shipped"
+  ],
+  "suggested_correction": "Buenas noticias: su pedido ha sido enviado y llegar\u00e1 pronto.",
+  "back_translation": "Your order was cancelled and will not be shipped.",
+  "send_recommendation": "Do Not Send",
+  "explanation": "The Spanish translation completely reverses the meaning of the original message, falsely telling the customer their order was cancelled and will not be shipped, when in fact it has already shipped. Sending this would cause serious customer confusion and potential business harm."
+}

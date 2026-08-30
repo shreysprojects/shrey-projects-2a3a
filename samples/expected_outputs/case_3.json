@@ -1,0 +1,27 @@
+{
+  "cleaned_description": "The customer has contacted support on three separate occasions regarding an outstanding refund that has not been processed. The refund has been pending for approximately two weeks with no resolution provided to date. The customer is requesting immediate action to complete the refund.",
+  "short_summary": "Customer reports an unresolved refund request that has been outstanding for two weeks despite three previous contacts with support.",
+  "issue_type": "Refund",
+  "customer_impact": "The customer has not received a refund they are expecting and has been unable to obtain a resolution after multiple contacts with support, resulting in significant frustration.",
+  "technical_details": [],
+  "missing_information": [
+    "Order or transaction reference number",
+    "Refund amount",
+    "Original payment method",
+    "Dates of previous contacts with support",
+    "Previous ticket or case reference numbers",
+    "Reason for the original refund request",
+    "Customer account details or identifier"
+  ],
+  "suggested_next_step": "Prioritise this case due to repeated contacts and extended wait time. Locate all previous tickets associated with this customer, identify the reason the refund has not been processed, and contact the customer with a clear resolution timeline or immediate confirmation of the refund.",
+  "tone_adjustment": "The original message was highly emotional, contained frustrated and accusatory language including phrases such as 'you people are useless'. All such language has been removed and replaced with neutral, professional wording that accurately reflects the customer's situation and the urgency of the issue.",
+  "ml_tags": [
+    "refund_pending",
+    "repeat_contact",
+    "escalation_required",
+    "customer_frustration",
+    "no_resolution",
+    "two_week_delay"
+  ],
+  "confidence_score": 38
+}

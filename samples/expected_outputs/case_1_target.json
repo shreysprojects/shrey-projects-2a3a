@@ -1,0 +1,13 @@
+{
+  "_note": "GOLDEN TARGET for case 1 — the quality a real AI provider should produce (from the spec's worked example). Run the same case with MODEL_PROVIDER=mock to see the offline placeholder and compare.",
+  "cleaned_description": "The customer is unable to log in and reports that the password reset process is not working. The customer may be using an incorrect email address and needs assistance as soon as possible.",
+  "short_summary": "Customer cannot log in and password reset is not working.",
+  "issue_type": "Login",
+  "customer_impact": "Customer is unable to access their account.",
+  "technical_details": ["Password reset process mentioned", "Possible email address issue"],
+  "missing_information": ["Customer email address", "Account ID", "Error message", "Time of last password reset attempt"],
+  "suggested_next_step": "Verify the customer email address and review password reset activity for the account.",
+  "tone_adjustment": "Original note included urgency and customer frustration; rewritten in neutral professional language.",
+  "ml_tags": ["login_issue", "password_reset", "customer_access", "urgent_support"],
+  "confidence_score": 85
+}

@@ -1,0 +1,9 @@
+# OPTIONAL: the semantic (NLI) check layer for Project 3A (src/nli_check.py).
+# Heavy (~2.5GB installed; first run downloads the ~1.1GB mDeBERTa-XNLI model
+# from Hugging Face). Without these packages 3A still works — the semantic
+# layer simply switches itself off. Disable explicitly with NLI_CHECK=off.
+#
+#   pip install -r requirements-nli.txt
+torch
+transformers
+sentencepiece

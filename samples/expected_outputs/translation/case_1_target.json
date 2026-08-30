@@ -1,0 +1,14 @@
+{
+  "_note": "GOLDEN TARGET for translation case 1 — the quality a real AI provider should produce. Run the same case with MODEL_PROVIDER=mock to see the offline placeholder and compare.",
+  "short_summary": "Safe to send: accurate, professional, and adds nothing beyond the English.",
+  "accuracy_rating": "High",
+  "confidence_score": 95,
+  "tone_check": "Professional",
+  "risky_phrases": [],
+  "missing_meaning": [],
+  "added_meaning": [],
+  "suggested_correction": "",
+  "back_translation": "We are sorry that your order has been delayed. Send us your order number to review the problem.",
+  "send_recommendation": "Send",
+  "explanation": "The Spanish accurately preserves the apology and the request for the order number, keeps a professional customer-service tone, and adds no promises or claims that were not in the English original."
+}

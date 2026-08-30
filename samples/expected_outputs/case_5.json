@@ -1,0 +1,28 @@
+{
+  "cleaned_description": "The application is repeatedly crashing. No additional context has been provided regarding the platform, device, operating system, application version, steps to reproduce, or error messages observed.",
+  "short_summary": "The application is crashing repeatedly with no further details provided.",
+  "issue_type": "Technical",
+  "customer_impact": "The user is unable to use the application due to repeated crashes, preventing normal operation.",
+  "technical_details": [],
+  "missing_information": [
+    "Application name or type",
+    "Platform (iOS, Android, Web, Desktop)",
+    "Device make and model",
+    "Operating system and version",
+    "Application version",
+    "Steps to reproduce the crash",
+    "Error message or crash log",
+    "Frequency of the crash (always, intermittent)",
+    "When the issue first started"
+  ],
+  "suggested_next_step": "Contact the reporter to gather full details including the application name, platform, device, OS version, app version, and steps to reproduce the crash before attempting diagnosis.",
+  "tone_adjustment": "The original input was extremely brief and informal. It has been rewritten in neutral, professional language. No emotional content was present, but the lack of detail required the cleaned description to note the absence of context explicitly.",
+  "ml_tags": [
+    "app_crash",
+    "technical_issue",
+    "insufficient_detail",
+    "mobile_or_desktop_app",
+    "requires_triage"
+  ],
+  "confidence_score": 5
+}

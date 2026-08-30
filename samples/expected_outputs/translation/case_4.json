@@ -1,0 +1,20 @@
+{
+  "short_summary": "Do not send: the Spanish adds an unauthorised full-refund guarantee not in the English.",
+  "accuracy_rating": "Low",
+  "confidence_score": 99,
+  "tone_check": "Professional",
+  "risky_phrases": [
+    "Le garantizamos un reembolso completo de inmediato"
+  ],
+  "missing_meaning": [
+    "We will look into your billing question",
+    "we will follow up"
+  ],
+  "added_meaning": [
+    "A full refund is guaranteed immediately \u2014 this promise does not exist in the English original"
+  ],
+  "suggested_correction": "",
+  "back_translation": "Thank you for contacting us. We guarantee you a full refund immediately.",
+  "send_recommendation": "Do Not Send",
+  "explanation": "The Spanish completely replaces the original message with an unauthorized promise of an immediate full refund, which is not present in the English and creates serious business and legal risk. The original meaning \u2014 that the team will investigate the billing question and follow up \u2014 is entirely absent."
+}

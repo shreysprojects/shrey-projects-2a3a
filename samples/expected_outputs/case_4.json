@@ -1,0 +1,25 @@
+{
+  "cleaned_description": "A customer has reported that a payment attempt was unsuccessful. No further details have been provided regarding the payment method, transaction reference, error message, or the platform on which the issue occurred.",
+  "short_summary": "Customer reports a failed payment with no additional details provided.",
+  "issue_type": "Payment",
+  "customer_impact": "The customer is unable to complete a payment, which may be preventing them from finalising a purchase or transaction.",
+  "technical_details": [],
+  "missing_information": [
+    "Customer name and account details",
+    "Transaction reference or order number",
+    "Payment method used (e.g. credit card, PayPal, bank transfer)",
+    "Error message or code displayed to the customer",
+    "Date and time of the failed payment attempt",
+    "Platform or application where the payment was attempted (e.g. website, mobile app)",
+    "Whether the issue is recurring or a one-time occurrence"
+  ],
+  "suggested_next_step": "Contact the customer to gather the missing details listed above, including transaction reference, payment method, and any error messages received, before attempting to investigate or resolve the issue.",
+  "tone_adjustment": "The original message was very brief and informal. The instruction 'please fix' has been removed and replaced with a professional request for investigation. No emotional language was present, but the lack of detail required significant expansion of the record.",
+  "ml_tags": [
+    "payment_failure",
+    "incomplete_request",
+    "transaction_issue",
+    "requires_follow_up"
+  ],
+  "confidence_score": 10
+}

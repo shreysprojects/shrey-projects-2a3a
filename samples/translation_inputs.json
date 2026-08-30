@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "case": "Good translation",
+    "expected": "Send",
+    "english_original": "We are sorry your order was delayed. Please send us your order number so we can review the issue.",
+    "spanish_translation": "Lamentamos que su pedido se haya retrasado. Envíenos su número de pedido para revisar el problema."
+  },
+  {
+    "id": 2,
+    "case": "Missing sentence",
+    "expected": "Review First",
+    "english_original": "We are sorry your order was delayed. Please send us your order number so we can review the issue.",
+    "spanish_translation": "Lamentamos que su pedido se haya retrasado."
+  },
+  {
+    "id": 3,
+    "case": "Harsh tone",
+    "expected": "Suggested correction / Review First",
+    "english_original": "We are sorry for the confusion. Could you please confirm your email address so we can help?",
+    "spanish_translation": "Usted se equivocó. Confirme su correo ahora."
+  },
+  {
+    "id": 4,
+    "case": "Added refund promise",
+    "expected": "Do Not Send",
+    "english_original": "Thank you for contacting us. We will look into your billing question and follow up.",
+    "spanish_translation": "Gracias por contactarnos. Le garantizamos un reembolso completo de inmediato."
+  },
+  {
+    "id": 5,
+    "case": "Blank Spanish text",
+    "expected": "Error",
+    "english_original": "We are sorry your order was delayed. Please send us your order number.",
+    "spanish_translation": ""
+  },
+  {
+    "id": 6,
+    "case": "Overly casual wording",
+    "expected": "Review First with improved Spanish",
+    "english_original": "Thank you for your patience. We will update you shortly.",
+    "spanish_translation": "Gracias por aguantar, bro. Te avisamos al rato."
+  },
+  {
+    "id": 7,
+    "case": "Different meaning",
+    "expected": "Low accuracy / Do Not Send",
+    "english_original": "Good news — your order has shipped and will arrive soon.",
+    "spanish_translation": "Su pedido fue cancelado y no será enviado."
+  }
+]
