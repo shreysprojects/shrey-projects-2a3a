@@ -13,3 +13,5 @@ node_modules/
 venv/
 .DS_Store
 Thumbs.db
+
+/docs/audit-2a-3a.md

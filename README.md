@@ -407,7 +407,6 @@ shrey-projects-2a3a/
       evaluate_translations.py        human-in-the-loop harness (CSV export + scoring)
       README.md                       validation methodology & acceptance guidance
   docs/
-    audit-2a-3a.md                  pre-integration completeness audit
     local-llm-shortlist.md          open-source LLMs for private, cost-controlled hosting
 ```
 
