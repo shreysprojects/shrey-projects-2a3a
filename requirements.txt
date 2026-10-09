@@ -3,7 +3,7 @@ pydantic>=2.5
 python-dotenv>=1.0
 pytest>=8.0
 
-# Provider SDKs are OPTIONAL — install only the one you use:
+# Provider SDKs are OPTIONAL - install only the one you use:
 #   pip install openai
 #   pip install anthropic
 #   pip install google-generativeai

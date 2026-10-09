@@ -3,12 +3,12 @@
 Two standalone Python utilities that turn raw service-desk text into **structured,
 validated JSON** for downstream systems. They are model-provider–agnostic: the
 same code runs against a local self-hosted model (the default), OpenAI, Anthropic
-(Claude), or Google (Gemini) — chosen by configuration, not by rewriting the logic.
+(Claude), or Google (Gemini) - chosen by configuration, not by rewriting the logic.
 
 | Project | What it does | Status |
 |---|---|---|
-| **2A — Service Request Cleanup** | Turns a messy support/technical note into a clean, professional, structured record. | ✅ Built |
-| **3A — Translation Quality Checker** | Checks whether an English→Spanish customer message is accurate and safe to send. | ✅ Built |
+| **2A - Service Request Cleanup** | Turns a messy support/technical note into a clean, professional, structured record. | ✅ Built |
+| **3A - Translation Quality Checker** | Checks whether an English→Spanish customer message is accurate and safe to send. | ✅ Built |
 
 > These are **prototypes** built per the assignment. They are deliberately kept
 > separate from the earlier translator / corrector / Jira tools and are **not**
@@ -16,24 +16,24 @@ same code runs against a local self-hosted model (the default), OpenAI, Anthropi
 
 ---
 
-## Overview — what was built, and how it works
+## Overview - what was built, and how it works
 
 Both tools take raw service-desk text and return **structured, validated JSON**
 through one shared, provider-agnostic layer (`src/provider_adapter.py`), so the
-same code runs against a **local self-hosted model** (the default — nothing
+same code runs against a **local self-hosted model** (the default - nothing
 leaves the machine, no API key) or a cloud provider (OpenAI / Anthropic / Google)
 by changing a setting, never the logic. Every model response is checked against a
 strict schema (`src/schemas.py`) before it is shown; a bad shape is re-asked, and
 if the model still fails, the tool errors cleanly instead of emitting junk. The
 whole thing is designed to run on a **CPU-only Linux box in under ~15 seconds per
-request** using a small local model — no GPU required.
+request** using a small local model - no GPU required.
 
 **Project 2A (cleanup)** is a single pass: a small local model (default
 `granite3.3:2b` via [Ollama](https://ollama.com)) rewrites a messy note into a
 clean, structured record and never invents facts (anything unstated becomes
 `"Not stated"` or a `missing_information` entry).
 
-**Project 3A (translation check)** is where the real engineering is — a small,
+**Project 3A (translation check)** is where the real engineering is - a small,
 fast model is not trustworthy enough on its own for a message a customer will
 read, so it runs a **layered, escalate-only safety pipeline**. Each layer may
 only make the verdict *stricter* (`Send → Review First → Do Not Send`), never
@@ -41,14 +41,14 @@ looser:
 
 1. **The model** (`granite3.3:2b`) gives a first judgement of accuracy, tone, and
    send-recommendation, as validated JSON.
-2. **A deterministic safety gate** (`src/safety_gate.py`, pure Python — no model,
+2. **A deterministic safety gate** (`src/safety_gate.py`, pure Python - no model,
    ~zero latency) re-checks the exact high-risk error classes small models miss:
    changed/added numbers and currencies, unauthorised commitments (guarantees,
    refunds, discounts, legal admissions, deadlines, free-of-charge, blame-shifting
    onto the customer), and dropped/added negations that reverse meaning.
 3. **An optional semantic check** (`src/nli_check.py`) uses a small open-source
-   cross-lingual model — **mDeBERTa-v3 XNLI** (MIT licence, ~280M params, runs on
-   CPU in under a second) — to catch pure meaning-swaps that have no trigger words
+   cross-lingual model - **mDeBERTa-v3 XNLI** (MIT licence, ~280M params, runs on
+   CPU in under a second) - to catch pure meaning-swaps that have no trigger words
    ("your subscription is active" → "has been suspended"). It only hard-blocks
    when *both* reading directions agree it's a contradiction.
 
@@ -64,7 +64,7 @@ deploys to a Linux box with a single command (`python3 deploy.py`).
 
 ---
 
-## Project 2A — Service Request & Technical Comment Cleanup Assistant
+## Project 2A - Service Request & Technical Comment Cleanup Assistant
 
 **Input:** one raw note (an argument, a file, or piped via stdin), e.g.
 
@@ -89,14 +89,14 @@ fields (validated against a strict schema before anything is shown):
 | `ml_tags` | simple, reusable tags for future classification |
 | `confidence_score` | 0–100, based on clarity/completeness of the input |
 
-**It never invents facts** — anything not stated becomes `"Not stated"` or goes
+**It never invents facts** - anything not stated becomes `"Not stated"` or goes
 into `missing_information`.
 
 ---
 
-## Project 3A — Translation Quality Checker
+## Project 3A - Translation Quality Checker
 
-**Input:** two texts — the original English message and its Spanish translation.
+**Input:** two texts - the original English message and its Spanish translation.
 Pass them as two arguments, as `--english`/`--spanish`, or as a JSON object
 (`--file` or stdin):
 
@@ -113,13 +113,13 @@ fields (validated against a strict schema before anything is shown):
 | Field | Meaning |
 |---|---|
 | `short_summary` | one-sentence, UI-facing verdict (e.g. "Do not send: adds an unauthorised refund promise") |
-| `accuracy_rating` | `High` / `Medium` / `Low` — how faithfully the Spanish conveys the English |
+| `accuracy_rating` | `High` / `Medium` / `Low` - how faithfully the Spanish conveys the English |
 | `confidence_score` | 0–100 confidence in the assessment |
 | `tone_check` | `Friendly` / `Professional` / `Too Harsh` / `Too Casual` / `Unclear` |
 | `risky_phrases` | wording that could confuse, offend, or create business risk |
 | `missing_meaning` | meaning in the English that is absent from the Spanish |
 | `added_meaning` | meaning in the Spanish that was **not** in the English (e.g. an invented refund promise) |
-| `suggested_correction` | improved Spanish — only if a correction is needed, else empty |
+| `suggested_correction` | improved Spanish - only if a correction is needed, else empty |
 | `back_translation` | the Spanish translated back into English, for operator review |
 | `send_recommendation` | `Send` / `Review First` / `Do Not Send` |
 | `explanation` | short justification of the recommendation |
@@ -137,7 +137,7 @@ Spanish** (e.g. the English was pasted into the Spanish field).
 ## Quick start
 
 > **Deploying to a Linux box?** Skip straight to
-> [Deploy on a Linux (CPU) box](#deploy-on-a-linux-cpu-box) — one command
+> [Deploy on a Linux (CPU) box](#deploy-on-a-linux-cpu-box) - one command
 > (`python3 deploy.py`) does the whole setup and starts the web UI.
 
 Paths differ by OS: on **Windows** the venv Python is `.venv\Scripts\python`; on
@@ -150,13 +150,13 @@ python -m venv .venv
 .venv/bin/pip install -r requirements.txt          # Linux / Mac
 
 # 2. run it
-#    The DEFAULT provider is "local" (a self-hosted model — see "Local model" below).
+#    The DEFAULT provider is "local" (a self-hosted model - see "Local model" below).
 #    To try instantly with NO setup, add --provider mock to any command.
 
-# Project 2A — clean up a messy note   (Windows shown; on Linux use .venv/bin/python)
+# Project 2A - clean up a messy note   (Windows shown; on Linux use .venv/bin/python)
 .venv\Scripts\python cleanup.py "cust cant login password reset not working very upset" --provider mock
 
-# Project 3A — check a translation (English first, Spanish second)
+# Project 3A - check a translation (English first, Spanish second)
 .venv\Scripts\python check_translation.py "We are sorry your order was delayed." "Lamentamos que su pedido se haya retrasado." --provider mock
 
 # Or try them interactively (prompts you in a loop):
@@ -171,12 +171,12 @@ python -m venv .venv
 .venv/bin/python app.py                # Linux / Mac
 ```
 
-You can also just **double-click `try_2a.py` / `try_3a.py`** in File Explorer —
+You can also just **double-click `try_2a.py` / `try_3a.py`** in File Explorer -
 they auto-detect and relaunch under the project's virtual-env, so the interactive
 tester opens even without a terminal. Leave the prompt blank (or Ctrl+C) to quit.
 
 You'll get the JSON record plus a readable summary. The **mock** provider is a
-placeholder for testing/demo — for real analysis, configure a provider below.
+placeholder for testing/demo - for real analysis, configure a provider below.
 
 > **Heads-up on mock mode:** the offline `mock` provider can't actually reason.
 > For 2A it just tidies the text; for 3A it always returns `Review First` with a
@@ -188,19 +188,19 @@ placeholder for testing/demo — for real analysis, configure a provider below.
 ## Local model (the default provider)
 
 By default the tools call a **local, self-hosted model** through an
-OpenAI-compatible server — no API key, no cloud, nothing leaves your machine. The
+OpenAI-compatible server - no API key, no cloud, nothing leaves your machine. The
 easiest server is [Ollama](https://ollama.com):
 
 ```console
 # one-time: install Ollama, then pull a model
-ollama pull granite3.3:2b        # recommended small model — fast on CPU, used for both 2A and 3A
+ollama pull granite3.3:2b        # recommended small model - fast on CPU, used for both 2A and 3A
 
-# that's it — Ollama serves on http://127.0.0.1:11434 automatically
+# that's it - Ollama serves on http://127.0.0.1:11434 automatically
 .venv\Scripts\python cleanup.py "cust cant login, password reset not working"
 ```
 
 `granite3.3:2b` is the model we validated on CPU (the 152-case 3A results above).
-`phi4-mini` and other small models also work — see
+`phi4-mini` and other small models also work - see
 [`docs/local-llm-shortlist.md`](docs/local-llm-shortlist.md).
 
 Settings (in `.env`):
@@ -214,10 +214,10 @@ Settings (in `.env`):
 | `LOCAL_BASE_URL` | `http://127.0.0.1:11434/v1` | Ollama; vLLM `:8000/v1`, LM Studio `:1234/v1` |
 | `NLI_CHECK` | `on` | 3A semantic check; set to `off` to disable it |
 
-The local provider needs **no extra `pip install`** — it uses only the standard
+The local provider needs **no extra `pip install`** - it uses only the standard
 library, and works with any OpenAI-compatible server (Ollama, vLLM, LM Studio,
 llama.cpp, TGI). Which model to choose for your hardware is covered in
-[`docs/local-llm-shortlist.md`](docs/local-llm-shortlist.md) — benchmark candidates
+[`docs/local-llm-shortlist.md`](docs/local-llm-shortlist.md) - benchmark candidates
 with the 3A eval harness. If the server isn't running you get a clear error telling
 you what to start (or switch to `--provider mock`).
 
@@ -234,14 +234,14 @@ you what to start (or switch to `--provider mock`).
 
    (Or `pip install -r requirements-providers.txt` to get all three.)
 
-3. Run the same command — or override per run with `--provider` / `--model`:
+3. Run the same command - or override per run with `--provider` / `--model`:
 
    ```console
    .venv\Scripts\python cleanup.py "..." --provider openai
    .venv\Scripts\python cleanup.py "..." --provider anthropic --model claude-sonnet-4-6
    ```
 
-Keys are read from environment variables only — **never hard-coded**, never
+Keys are read from environment variables only - **never hard-coded**, never
 committed (`.env` is git-ignored). To compare providers on the same input (the
 instructor's suggestion), just change `--provider` and re-run.
 
@@ -253,9 +253,9 @@ instructor's suggestion), just change `--provider` and re-run.
 
 ## Deploy on a Linux (CPU) box
 
-The whole project runs on a plain CPU-only Linux machine — no GPU. There's a
+The whole project runs on a plain CPU-only Linux machine - no GPU. There's a
 single Python command that does the entire setup and starts the web UI. (It's
-`deploy.py`, kept in Python on purpose — no shell scripts.)
+`deploy.py`, kept in Python on purpose - no shell scripts.)
 
 ### One command
 
@@ -300,12 +300,12 @@ curl -fsSL https://ollama.com/install.sh | sh
 If Ollama isn't installed or isn't running, `deploy.py` stops with a clear
 message telling you exactly what to run, then you re-run `deploy.py`. It pulls
 the model itself, so you don't need to `ollama pull` by hand. On a CPU-only box
-you use the **stock** model (`granite3.3:2b`) — the GPU-forcing model variants
+you use the **stock** model (`granite3.3:2b`) - the GPU-forcing model variants
 from local testing aren't needed, because a box with no GPU already runs on CPU.
 
 ### What to do by hand (if you'd rather not use the script)
 
-`deploy.py` just automates these steps — you can run them yourself:
+`deploy.py` just automates these steps - you can run them yourself:
 
 ```console
 python3 -m venv .venv
@@ -335,7 +335,7 @@ ollama pull granite3.3:2b
 
 ## Command-line options
 
-**Project 2A — `cleanup.py`**
+**Project 2A - `cleanup.py`**
 
 ```
 python cleanup.py [text] [options]
@@ -349,7 +349,7 @@ python cleanup.py [text] [options]
   --dev-mode           enable logging of the input text (LOCAL dev only)
 ```
 
-**Project 3A — `check_translation.py`**
+**Project 3A - `check_translation.py`**
 
 ```
 python check_translation.py [english] [spanish] [options]
@@ -376,7 +376,7 @@ You can also pipe a JSON object in via stdin (same shape as `--file`).
 ```
 shrey-projects-2a3a/
   deploy.py                      one-command Linux setup + launch (creates venv, installs, starts UI)
-  app.py                         local web UI — both tools on one page (stdlib http.server)
+  app.py                         local web UI - both tools on one page (stdlib http.server)
   cleanup.py                     launcher for Project 2A
   check_translation.py           launcher for Project 3A
   try_2a.py                      interactive prompt-loop demo for 2A
@@ -420,7 +420,7 @@ shrey-projects-2a3a/
 .venv/bin/python -m pytest -q              # Linux / Mac
 ```
 
-Tests run fully offline — no key, no network, no model download needed (the
+Tests run fully offline - no key, no network, no model download needed (the
 `mock` provider is used, and the NLI layer's wiring is tested with the real model
 mocked out). They cover both projects: the spec scenarios, schema validation
 (enum normalisation, score clamping, list coercion), the blank / not-Spanish
@@ -431,7 +431,7 @@ never-downgrades, fail-open), and the **web UI** handlers. Current suite:
 **83 tests**.
 
 > The semantic layer's real accuracy (not just its wiring) is measured by the
-> eval harness on the 152-case set, not the unit tests — see
+> eval harness on the 152-case set, not the unit tests - see
 > [`samples/evaluation/README.md`](samples/evaluation/README.md).
 
 ---
@@ -445,6 +445,6 @@ never-downgrades, fail-open), and the **web UI** handlers. Current suite:
   saved. If the model returns a bad shape, the cleanup module re-asks it with the
   error (up to a retry limit), then fails cleanly rather than emitting junk.
 - This is exactly how the **default `local` provider** works: one branch in
-  `provider_adapter.py` calls a self-hosted OpenAI-compatible server — no change to
+  `provider_adapter.py` calls a self-hosted OpenAI-compatible server - no change to
   the utilities or the workflow. Swapping between local, OpenAI, Anthropic, and
   Google is a config change, never a code rewrite.
