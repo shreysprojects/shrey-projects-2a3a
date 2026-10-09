@@ -1,0 +1,22 @@
+{
+  "short_summary": "Do not send: the Spanish blames the customer and drops the apology.",
+  "accuracy_rating": "Low",
+  "confidence_score": 97,
+  "tone_check": "Too Harsh",
+  "risky_phrases": [
+    "Usted se equivoc\u00f3",
+    "Confirme su correo ahora"
+  ],
+  "missing_meaning": [
+    "Apology for the confusion ('We are sorry for the confusion')",
+    "Polite request phrasing ('Could you please')",
+    "Offer to help ('so we can help')"
+  ],
+  "added_meaning": [
+    "Blames the customer for making a mistake ('Usted se equivoc\u00f3' = 'You were wrong/made a mistake')"
+  ],
+  "suggested_correction": "Lamentamos la confusi\u00f3n. \u00bfPodr\u00eda confirmarnos su direcci\u00f3n de correo electr\u00f3nico para poder ayudarle?",
+  "back_translation": "You were wrong. Confirm your email now.",
+  "send_recommendation": "Do Not Send",
+  "explanation": "The Spanish translation completely reverses the tone of the original by blaming the customer ('You were wrong') instead of apologizing, and drops the apology, the polite request, and the offer to help entirely. This version would likely offend the customer and damage the brand."
+}

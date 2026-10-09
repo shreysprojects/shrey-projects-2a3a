@@ -1,0 +1,35 @@
+{
+  "cleaned_description": "The checkout API is returning an HTTP 500 Internal Server Error on POST /orders when a promotional code is applied to an order. The issue appears to be caused by a null pointer exception within the DiscountService.calc method. The fault is consistently reproducible only on orders exceeding $200 in value. Temporary diagnostic logging has been added to assist with investigation.",
+  "short_summary": "Checkout API returns HTTP 500 on POST /orders when a promo code is applied to orders over $200, likely due to a null pointer exception in DiscountService.calc.",
+  "issue_type": "Technical",
+  "customer_impact": "Customers are unable to complete checkout when applying a promotional code to orders valued above $200, resulting in a failed order submission.",
+  "technical_details": [
+    "Endpoint: POST /orders",
+    "HTTP response: 500 Internal Server Error",
+    "Service: DiscountService.calc (suspected null pointer exception)",
+    "Condition: Occurs only on orders exceeding $200",
+    "Temporary logging has been added"
+  ],
+  "missing_information": [
+    "Specific promo code(s) that trigger the issue, or whether it affects all promo codes",
+    "Full stack trace or error log output",
+    "Environment affected (production, staging, development)",
+    "Frequency and volume of affected orders",
+    "When the issue was first observed",
+    "Whether any recent deployments or code changes preceded the issue"
+  ],
+  "suggested_next_step": "Review the temporary logging output to obtain the full stack trace from DiscountService.calc. Identify the null reference \u2014 likely an unvalidated discount object or threshold condition \u2014 and apply a null check or guard clause. Confirm whether the $200 threshold is a hard boundary or approximate, and test with multiple promo codes across the boundary value.",
+  "tone_adjustment": "The original note was technically concise and professionally neutral. No emotional or unprofessional language was present. Minor grammatical expansion was applied for clarity and formality.",
+  "ml_tags": [
+    "api_error",
+    "http_500",
+    "checkout",
+    "promo_code",
+    "null_pointer_exception",
+    "discount_service",
+    "order_processing",
+    "backend_error",
+    "order_value_threshold"
+  ],
+  "confidence_score": 72
+}

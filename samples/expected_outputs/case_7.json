@@ -1,0 +1,36 @@
+{
+  "cleaned_description": "The customer is reporting three concurrent issues: (1) they are unable to log in to their account, (2) their most recent order was not delivered, and (3) they believe they were charged twice for that order. Additionally, the loyalty rewards points associated with the order have not been applied to their account.",
+  "short_summary": "Customer cannot log in and is reporting a missing order, a suspected duplicate charge, and missing rewards points on their account.",
+  "issue_type": "Other",
+  "customer_impact": "The customer is unable to access their account, has not received a paid-for order, may have been financially overcharged, and is missing loyalty rewards points \u2014 representing multiple simultaneous service failures.",
+  "technical_details": [
+    "Login/authentication system",
+    "Order management system",
+    "Payment processing system (possible duplicate charge)",
+    "Loyalty/rewards points system"
+  ],
+  "missing_information": [
+    "Customer account identifier (username, email, or account number)",
+    "Order number or order reference",
+    "Date of the order in question",
+    "Payment method used",
+    "Evidence or transaction reference for the suspected duplicate charge",
+    "Expected delivery date and delivery address",
+    "Number of rewards points expected vs. currently showing",
+    "Device and browser or app version used for login attempt",
+    "Any error messages received during login"
+  ],
+  "suggested_next_step": "Triage this as a multi-issue ticket. Assign to a senior support agent who can coordinate across authentication, fulfilment, payments, and loyalty teams. Begin by verifying the customer's identity through an alternative channel, then investigate each issue in parallel: confirm login status, check order and delivery records, review payment transactions for duplication, and audit the rewards points ledger.",
+  "tone_adjustment": "The original message was informal and unpunctuated but not emotional or hostile. It was rewritten into structured, professional language and the multiple issues were clearly separated for easier triage. No emotional content required neutralisation.",
+  "ml_tags": [
+    "login_issue",
+    "missing_order",
+    "duplicate_charge",
+    "missing_loyalty_points",
+    "multi_issue_ticket",
+    "payment_dispute",
+    "rewards_account",
+    "order_not_delivered"
+  ],
+  "confidence_score": 32
+}

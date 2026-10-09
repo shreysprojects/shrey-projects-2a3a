@@ -1,0 +1,19 @@
+{
+  "short_summary": "Review first: the wording is too casual ('bro') for customer service.",
+  "accuracy_rating": "Medium",
+  "confidence_score": 88,
+  "tone_check": "Too Casual",
+  "risky_phrases": [
+    "aguantar (implies enduring something unpleasant, with a dismissive connotation)",
+    "bro (overly informal, unprofessional address)",
+    "al rato (vague and very colloquial, implies an indefinite delay)"
+  ],
+  "missing_meaning": [],
+  "added_meaning": [
+    "bro \u2014 informal address not present in the English"
+  ],
+  "suggested_correction": "Gracias por su paciencia. Le informaremos en breve.",
+  "back_translation": "Thanks for putting up with it, bro. We'll let you know in a bit.",
+  "send_recommendation": "Review First",
+  "explanation": "The core meaning is roughly preserved, but the language is far too casual and informal for a customer-service context. 'Aguantar' and 'bro' are unprofessional and could come across as dismissive; the translation should be corrected before sending."
+}

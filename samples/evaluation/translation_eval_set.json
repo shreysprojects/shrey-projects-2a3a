@@ -1,0 +1,1218 @@
+[
+  {
+    "id": 1,
+    "category": "faithful_good",
+    "english_original": "We are sorry your order was delayed. Please send us your order number so we can review the issue.",
+    "spanish_translation": "Lamentamos que su pedido se haya retrasado. Envíenos su número de pedido para que podamos revisar el problema.",
+    "expected_recommendation": "Send",
+    "notes": "Accurate, professional, nothing added or dropped."
+  },
+  {
+    "id": 2,
+    "category": "missing_sentence",
+    "english_original": "We are sorry your order was delayed. Please send us your order number so we can review the issue.",
+    "spanish_translation": "Lamentamos que su pedido se haya retrasado.",
+    "expected_recommendation": "Review First",
+    "notes": "Drops the call-to-action (order number request)."
+  },
+  {
+    "id": 3,
+    "category": "harsh_blaming_tone",
+    "english_original": "We are sorry for the confusion. Could you please confirm your email address so we can help?",
+    "spanish_translation": "Usted se equivocó. Confirme su correo ahora.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "Blames the customer and reverses the apologetic intent — a meaning change, not just tone."
+  },
+  {
+    "id": 4,
+    "category": "added_refund_promise",
+    "english_original": "Thank you for contacting us. We will look into your billing question and follow up.",
+    "spanish_translation": "Gracias por contactarnos. Le garantizamos un reembolso completo de inmediato.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "Invents an unauthorised full-refund guarantee not in the English."
+  },
+  {
+    "id": 5,
+    "category": "reversed_meaning",
+    "english_original": "Good news — your order has shipped and will arrive soon.",
+    "spanish_translation": "Su pedido fue cancelado y no será enviado.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "Says the order was cancelled — the opposite of the English."
+  },
+  {
+    "id": 6,
+    "category": "too_casual",
+    "english_original": "Thank you for your patience. We will update you shortly.",
+    "spanish_translation": "Gracias por aguantar, bro. Te avisamos al rato.",
+    "expected_recommendation": "Review First",
+    "notes": "Meaning preserved but register is far too casual for support."
+  },
+  {
+    "id": 7,
+    "category": "negation_dropped",
+    "english_original": "Your account has not been charged for this order.",
+    "spanish_translation": "Su cuenta ha sido cargada por este pedido.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "Drops the 'not' — tells the customer they WERE charged. Critical error."
+  },
+  {
+    "id": 8,
+    "category": "wrong_number",
+    "english_original": "Your refund of $45 has been processed and will appear within 5 business days.",
+    "spanish_translation": "Su reembolso de $54 ha sido procesado y aparecerá en un plazo de 5 días hábiles.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "Amount changed from $45 to $54 — a factual/number error."
+  },
+  {
+    "id": 9,
+    "category": "mistranslated_key_term",
+    "english_original": "We can offer you a refund for the damaged item.",
+    "spanish_translation": "Podemos ofrecerle un descuento por el artículo dañado.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "'refund' became 'descuento' (discount) — changes the commitment."
+  },
+  {
+    "id": 10,
+    "category": "added_deadline",
+    "english_original": "We will look into this and get back to you.",
+    "spanish_translation": "Investigaremos esto y le responderemos hoy mismo antes de las 5 p. m.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "Adds a specific same-day 5pm deadline commitment not in the English."
+  },
+  {
+    "id": 11,
+    "category": "faithful_formal",
+    "english_original": "Thank you for reaching out. Your case has been escalated to our specialist team, who will contact you within 24 hours.",
+    "spanish_translation": "Gracias por comunicarse con nosotros. Su caso ha sido escalado a nuestro equipo de especialistas, que se pondrá en contacto con usted en un plazo de 24 horas.",
+    "expected_recommendation": "Send",
+    "notes": "Accurate, formal, faithful — should pass cleanly."
+  },
+  {
+    "id": 12,
+    "category": "politeness_dropped",
+    "english_original": "Could you please provide a screenshot of the error so we can investigate?",
+    "spanish_translation": "Mande una captura del error.",
+    "expected_recommendation": "Review First",
+    "notes": "Meaning kept but the polite request became a blunt command."
+  },
+  {
+    "id": 13,
+    "category": "added_legal_claim",
+    "english_original": "We understand your frustration and will do our best to resolve this.",
+    "spanish_translation": "Entendemos su frustración y aceptamos toda la responsabilidad legal por este problema.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "Adds an admission of full legal responsibility not present in the English."
+  },
+  {
+    "id": 14,
+    "category": "regional_variant_ok",
+    "english_original": "Please check your email for the confirmation.",
+    "spanish_translation": "Por favor, revise su correo electrónico para ver la confirmación.",
+    "expected_recommendation": "Send",
+    "notes": "Natural, accurate, polite — a clean pass."
+  },
+  {
+    "id": 15,
+    "category": "partial_english_left_in",
+    "english_original": "We have received your request and will process it shortly.",
+    "spanish_translation": "Hemos recibido su request y la procesaremos shortly.",
+    "expected_recommendation": "Review First",
+    "notes": "Untranslated English words left in ('request', 'shortly')."
+  },
+  {
+    "id": 16,
+    "category": "false_cognate",
+    "english_original": "We will actually update your address right now.",
+    "spanish_translation": "Actualmente actualizaremos su dirección ahora mismo.",
+    "expected_recommendation": "Review First",
+    "notes": "'actually' mistranslated as 'actualmente' (currently) — subtle meaning drift."
+  },
+  {
+    "id": 17,
+    "category": "english_in_spanish_field",
+    "english_original": "We are sorry your order was delayed. Please send us your order number.",
+    "spanish_translation": "We are sorry your order was delayed. Please send us your order number.",
+    "expected_recommendation": "Error",
+    "notes": "Operator pasted English into the Spanish field — the tool should reject before calling the model."
+  },
+  {
+    "id": 18,
+    "category": "subtle_tone_shift",
+    "english_original": "I understand this has been inconvenient, and I appreciate your patience.",
+    "spanish_translation": "Sé que esto le ha causado molestias. Tenga paciencia.",
+    "expected_recommendation": "Review First",
+    "notes": "'appreciate your patience' became an imperative 'be patient' — slightly curt."
+  },
+  {
+    "id": 19,
+    "category": "faithful_short",
+    "english_original": "Your order has shipped.",
+    "spanish_translation": "Su pedido ha sido enviado.",
+    "expected_recommendation": "Send",
+    "notes": "Short, exact, no risk."
+  },
+  {
+    "id": 20,
+    "category": "overstated_certainty",
+    "english_original": "This should fix the problem.",
+    "spanish_translation": "Esto solucionará el problema de forma definitiva y garantizada.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "Turns a tentative 'should' into a guaranteed definitive fix."
+  },
+  {
+    "id": 21,
+    "category": "faithful_with_names",
+    "english_original": "Hi Maria, your appointment with Dr. Lopez is confirmed for Monday at 3 PM.",
+    "spanish_translation": "Hola María, su cita con el Dr. López está confirmada para el lunes a las 3 de la tarde.",
+    "expected_recommendation": "Send",
+    "notes": "Names, date, and time all preserved correctly."
+  },
+  {
+    "id": 22,
+    "category": "dropped_condition",
+    "english_original": "If the item is unused, you can return it within 30 days for a full refund.",
+    "spanish_translation": "Puede devolver el artículo dentro de los 30 días para un reembolso completo.",
+    "expected_recommendation": "Review First",
+    "notes": "Drops the 'if unused' condition — changes the eligibility, meaning risk."
+  },
+  {
+    "id": 23,
+    "category": "added_refund_paraphrase",
+    "english_original": "We are reviewing your case and will update you.",
+    "spanish_translation": "Le devolveremos todo su dinero esta semana.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "Money-back promise phrased WITHOUT the word 'reembolso' — probes beyond the gate lexicon."
+  },
+  {
+    "id": 24,
+    "category": "wrong_order_number",
+    "english_original": "Your order #48291 has been located.",
+    "spanish_translation": "Su pedido #48921 ha sido localizado.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "Transposed digits in the order number."
+  },
+  {
+    "id": 25,
+    "category": "wrong_percentage",
+    "english_original": "You'll receive a 10% discount on your next purchase.",
+    "spanish_translation": "Recibirá un 20% de descuento en su próxima compra.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "Discount is licensed by the English, but the percentage doubled."
+  },
+  {
+    "id": 26,
+    "category": "wrong_time",
+    "english_original": "Our support line closes at 6 PM.",
+    "spanish_translation": "Nuestra línea de soporte cierra a las 8 de la noche.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "Closing time changed from 6 to 8."
+  },
+  {
+    "id": 27,
+    "category": "negation_dropped_cannot",
+    "english_original": "We cannot process your request without a receipt.",
+    "spanish_translation": "Podemos procesar su solicitud sin un recibo.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "'cannot' dropped — says the request CAN be processed without a receipt."
+  },
+  {
+    "id": 28,
+    "category": "reversed_state_no_negation",
+    "english_original": "Your subscription is active.",
+    "spanish_translation": "Su suscripción ha sido suspendida.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "Active became suspended — reversal with no negation word for rules to catch; model must judge."
+  },
+  {
+    "id": 29,
+    "category": "wrong_currency",
+    "english_original": "The charge of $100 will be refunded.",
+    "spanish_translation": "Se le reembolsarán 100 €.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "Amount matches but the currency changed from dollars to euros — number rules alone are blind to this."
+  },
+  {
+    "id": 30,
+    "category": "scope_expansion",
+    "english_original": "We will replace the damaged screen.",
+    "spanish_translation": "Reemplazaremos el dispositivo completo por uno nuevo.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "Screen replacement became whole-device replacement — commitment scope silently expanded."
+  },
+  {
+    "id": 31,
+    "category": "added_threat",
+    "english_original": "Please update your payment method.",
+    "spanish_translation": "Actualice su método de pago hoy mismo o su cuenta será eliminada.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "Adds a same-day ultimatum and an account-deletion threat not in the English."
+  },
+  {
+    "id": 32,
+    "category": "false_cognate_severe",
+    "english_original": "We are embarrassed by this error.",
+    "spanish_translation": "Estamos embarazados por este error.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "'embarrassed' translated as 'pregnant' — the classic false cognate; meaning is nonsense."
+  },
+  {
+    "id": 33,
+    "category": "added_free_paraphrase",
+    "english_original": "We will send you a replacement.",
+    "spanish_translation": "Le enviaremos un reemplazo sin que tenga que pagar nada.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "Free-of-charge promise phrased without 'gratis'/'sin costo' — probes beyond the gate lexicon."
+  },
+  {
+    "id": 34,
+    "category": "liability_paraphrase",
+    "english_original": "We apologize for the inconvenience.",
+    "spanish_translation": "Reconocemos que el fallo fue totalmente culpa nuestra y asumiremos las consecuencias.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "Full-fault admission phrased without the word 'legal' — liability class, new wording."
+  },
+  {
+    "id": 35,
+    "category": "dropped_apology",
+    "english_original": "We sincerely apologize for the delay. Your order will arrive tomorrow.",
+    "spanish_translation": "Su pedido llegará mañana.",
+    "expected_recommendation": "Review First",
+    "notes": "The apology sentence vanished; facts preserved."
+  },
+  {
+    "id": 36,
+    "category": "informal_register_shift",
+    "english_original": "Please confirm your address so we can help.",
+    "spanish_translation": "Confirma tu dirección y te ayudamos, ¿vale?",
+    "expected_recommendation": "Review First",
+    "notes": "Professional 'usted' register became casual 'tú' with slang tag."
+  },
+  {
+    "id": 37,
+    "category": "untranslated_terms",
+    "english_original": "Your warranty claim has been approved.",
+    "spanish_translation": "Su warranty claim ha sido aprobado.",
+    "expected_recommendation": "Review First",
+    "notes": "Key term left in English."
+  },
+  {
+    "id": 38,
+    "category": "hedge_dropped",
+    "english_original": "This may take up to 5 business days.",
+    "spanish_translation": "Esto tomará 5 días hábiles.",
+    "expected_recommendation": "Review First",
+    "notes": "'may take up to' became a flat 'will take' — certainty upgraded, number unchanged."
+  },
+  {
+    "id": 39,
+    "category": "sentence_dropped_cta",
+    "english_original": "Your ticket has been created. A specialist will contact you. You can reply to this email with questions.",
+    "spanish_translation": "Su ticket ha sido creado. Un especialista se pondrá en contacto con usted.",
+    "expected_recommendation": "Review First",
+    "notes": "Drops the 'you can reply' sentence — loses the customer's action channel."
+  },
+  {
+    "id": 40,
+    "category": "blunt_imperative",
+    "english_original": "Could you please try restarting the app when you have a moment?",
+    "spanish_translation": "Reinicie la aplicación.",
+    "expected_recommendation": "Review First",
+    "notes": "Polite request became a bare command."
+  },
+  {
+    "id": 41,
+    "category": "sarcastic_undertone",
+    "english_original": "Thanks for your patience while we fix this.",
+    "spanish_translation": "Gracias por su paciencia infinita mientras arreglamos esto de una vez.",
+    "expected_recommendation": "Review First",
+    "notes": "Added 'infinita' / 'de una vez' reads sarcastic or exasperated."
+  },
+  {
+    "id": 42,
+    "category": "anglicisms",
+    "english_original": "Please click the link to reset your password.",
+    "spanish_translation": "Haga clic en el link para resetear su password.",
+    "expected_recommendation": "Review First",
+    "notes": "Understandable but 'link'/'resetear'/'password' should be 'enlace'/'restablecer'/'contraseña'."
+  },
+  {
+    "id": 43,
+    "category": "restriction_softened",
+    "english_original": "Refunds are only available within 14 days of purchase.",
+    "spanish_translation": "Los reembolsos están disponibles dentro de los 14 días.",
+    "expected_recommendation": "Review First",
+    "notes": "'only' and 'of purchase' dropped — the restriction reads looser."
+  },
+  {
+    "id": 44,
+    "category": "delivery_detail_changed",
+    "english_original": "Your package was delivered to your front door.",
+    "spanish_translation": "Su paquete fue entregado a su vecino.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "Front door became the neighbor — a factual change with no number or lexicon word to catch."
+  },
+  {
+    "id": 45,
+    "category": "licensed_guarantee",
+    "english_original": "This product comes with a two-year guarantee.",
+    "spanish_translation": "Este producto tiene una garantía de dos años.",
+    "expected_recommendation": "Send",
+    "notes": "Gate trap: 'garantía' is fully licensed by the English 'guarantee'. Must NOT be blocked."
+  },
+  {
+    "id": 46,
+    "category": "licensed_refund_decimal",
+    "english_original": "Your refund of $89.99 will be processed within 3 business days.",
+    "spanish_translation": "Su reembolso de $89,99 será procesado en un plazo de 3 días hábiles.",
+    "expected_recommendation": "Send",
+    "notes": "Gate trap: decimal comma (89,99 == 89.99) and licensed 'reembolso'/'plazo'. Must NOT be blocked."
+  },
+  {
+    "id": 47,
+    "category": "licensed_negation",
+    "english_original": "You will not be charged until the item ships.",
+    "spanish_translation": "No se le cobrará hasta que el artículo sea enviado.",
+    "expected_recommendation": "Send",
+    "notes": "Negation faithfully preserved on both sides."
+  },
+  {
+    "id": 48,
+    "category": "licensed_discount",
+    "english_original": "As an apology, we've applied a 15% discount to your invoice.",
+    "spanish_translation": "Como disculpa, hemos aplicado un descuento del 15% a su factura.",
+    "expected_recommendation": "Send",
+    "notes": "Gate trap: discount and percentage both licensed and matching."
+  },
+  {
+    "id": 49,
+    "category": "licensed_cancellation",
+    "english_original": "As requested, your subscription has been cancelled.",
+    "spanish_translation": "Como solicitó, su suscripción ha sido cancelada.",
+    "expected_recommendation": "Send",
+    "notes": "Gate trap: cancellation is exactly what the English says."
+  },
+  {
+    "id": 50,
+    "category": "clean_date_time",
+    "english_original": "Your appointment is on March 3 at 10 AM.",
+    "spanish_translation": "Su cita es el 3 de marzo a las 10 de la mañana.",
+    "expected_recommendation": "Send",
+    "notes": "Date and time preserved across formats."
+  },
+  {
+    "id": 51,
+    "category": "clean_update_confirmation",
+    "english_original": "Thank you for letting us know. We have updated your email address.",
+    "spanish_translation": "Gracias por informarnos. Hemos actualizado su dirección de correo electrónico.",
+    "expected_recommendation": "Send",
+    "notes": "Faithful, polite, nothing added."
+  },
+  {
+    "id": 52,
+    "category": "licensed_immediacy",
+    "english_original": "We will fix this right away.",
+    "spanish_translation": "Lo solucionaremos de inmediato.",
+    "expected_recommendation": "Send",
+    "notes": "Gate trap: 'de inmediato' licensed by 'right away'. Must NOT be blocked."
+  },
+  {
+    "id": 53,
+    "category": "amount_changed",
+    "english_original": "I've processed your refund of $120.50 for the duplicate charge. You should see it on your statement within 7 to 10 business days.",
+    "spanish_translation": "He procesado su reembolso de $150.20 por el cargo duplicado. Debería verlo reflejado en su estado de cuenta dentro de 7 a 10 días hábiles.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "The refund amount was changed from $120.50 to $150.20."
+  },
+  {
+    "id": 54,
+    "category": "meaning_reversed",
+    "english_original": "Unfortunately, we are unable to waive the annual fee on this account.",
+    "spanish_translation": "Con gusto le informamos que la cuota anual de su cuenta ha sido eximida.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "The refusal to waive the fee is reversed into a statement that the fee was waived."
+  },
+  {
+    "id": 55,
+    "category": "indirect_refund_promise",
+    "english_original": "Our billing team will review your request and let you know whether a refund is possible.",
+    "spanish_translation": "Nuestro equipo de facturación revisará su solicitud y, en cuanto termine la revisión, el dinero estará de vuelta en su cuenta.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "A conditional review is indirectly turned into an assurance that the money will be returned, without any guarantee keyword."
+  },
+  {
+    "id": 56,
+    "category": "indirect_outcome_promise",
+    "english_original": "Your chargeback is still being reviewed by the bank, and we'll share the outcome as soon as we have it.",
+    "spanish_translation": "El banco sigue revisando su contracargo, pero quédese tranquilo: ese cargo no volverá a aparecer en su estado de cuenta.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "The Spanish indirectly promises a favorable dispute outcome by asserting the charge will never reappear."
+  },
+  {
+    "id": 57,
+    "category": "unauthorized_credit_implied",
+    "english_original": "I've forwarded your question about the invoice discrepancy to our billing department.",
+    "spanish_translation": "He remitido su consulta sobre la discrepancia en la factura a nuestro departamento de facturación, y la diferencia se verá descontada en su próxima factura.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "The Spanish quietly adds a commitment that the difference will be deducted from the next invoice, which the English never offers."
+  },
+  {
+    "id": 58,
+    "category": "conditional_stated_as_done",
+    "english_original": "If you cancel mid-cycle, you may be eligible for a prorated credit.",
+    "spanish_translation": "Como canceló a mitad del ciclo, el crédito prorrateado ya quedó aplicado a su cuenta.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "A hypothetical eligibility is indirectly converted into a factual claim that the credit was already applied."
+  },
+  {
+    "id": 59,
+    "category": "blame_added",
+    "english_original": "Your payment on July 2 didn't go through, so the invoice is still showing as unpaid.",
+    "spanish_translation": "Su pago del 2 de julio fue rechazado porque usted ingresó mal los datos de su tarjeta, así que la factura sigue pendiente.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "The Spanish blames the customer for entering wrong card details, an accusation absent from the English."
+  },
+  {
+    "id": 60,
+    "category": "deadline_added",
+    "english_original": "We'll email you as soon as there's an update on your dispute.",
+    "spanish_translation": "Le enviaremos por correo la resolución definitiva de su disputa a más tardar dentro de 24 horas.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "The Spanish invents a 24-hour commitment and a definitive resolution that the English never promises."
+  },
+  {
+    "id": 61,
+    "category": "unauthorized_compensation",
+    "english_original": "We're sorry for the billing error; it has been corrected on your account.",
+    "spanish_translation": "Lamentamos el error de facturación; ya quedó corregido y además le regalaremos un mes de suscripción sin costo.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "The Spanish adds an explicit gift of a free subscription month that is not offered in the English."
+  },
+  {
+    "id": 62,
+    "category": "register_too_casual",
+    "english_original": "Your invoice for June is ready. You can download it from the billing section of your account.",
+    "spanish_translation": "¡Listo! Ya te dejamos la factura de junio, la bajas desde la sección de facturación de tu cuenta, ¿va?",
+    "expected_recommendation": "Review First",
+    "notes": "Meaning is intact but the formal reply became slangy tuteo, a tone-only problem."
+  },
+  {
+    "id": 63,
+    "category": "tone_harsh",
+    "english_original": "Unfortunately, we aren't able to extend the payment due date, but I'm happy to answer any questions about the invoice.",
+    "spanish_translation": "No vamos a extender la fecha de pago. Si tiene preguntas sobre la factura, dígame.",
+    "expected_recommendation": "Review First",
+    "notes": "The refusal and offer to help are preserved but the softening language is stripped, making it blunt."
+  },
+  {
+    "id": 64,
+    "category": "untranslated_terms",
+    "english_original": "The late fee will appear on your next billing cycle, and your payment method on file will be charged automatically.",
+    "spanish_translation": "El late fee aparecerá en su próximo billing cycle, y el método de pago registrado se cobrará automáticamente.",
+    "expected_recommendation": "Review First",
+    "notes": "Meaning is preserved but 'late fee' and 'billing cycle' are left untranslated in English."
+  },
+  {
+    "id": 65,
+    "category": "minor_detail_dropped",
+    "english_original": "You can update your card in the mobile app or on our website under Payment Settings, and the change takes effect immediately.",
+    "spanish_translation": "Puede actualizar su tarjeta en la aplicación móvil, en la sección de Configuración de pagos, y el cambio se aplica de inmediato.",
+    "expected_recommendation": "Review First",
+    "notes": "The website option is dropped, a minor omission that leaves the core instruction intact."
+  },
+  {
+    "id": 66,
+    "category": "hedge_dropped",
+    "english_original": "The refund should appear on your statement within 5 business days, depending on your bank.",
+    "spanish_translation": "El reembolso aparecerá en su estado de cuenta dentro de 5 días hábiles.",
+    "expected_recommendation": "Review First",
+    "notes": "The 'should' hedge and the bank-dependency qualifier are dropped, hardening the timing into a certainty."
+  },
+  {
+    "id": 67,
+    "category": "politeness_lost",
+    "english_original": "Thank you so much for your patience while we sorted this out, and again, we're truly sorry for the confusion with the double invoice.",
+    "spanish_translation": "Ya quedó resuelto el problema de la factura duplicada.",
+    "expected_recommendation": "Review First",
+    "notes": "The resolution is conveyed but the thanks and apology are entirely stripped out."
+  },
+  {
+    "id": 68,
+    "category": "tone_condescending",
+    "english_original": "I'm sorry for the confusion — the $19.99 charge is your monthly subscription fee, not a duplicate.",
+    "spanish_translation": "Como ya se le explicó, el cargo de $19.99 es su cuota mensual de suscripción, no un duplicado.",
+    "expected_recommendation": "Review First",
+    "notes": "The amount and explanation are correct but the apology is replaced with a condescending 'as already explained'."
+  },
+  {
+    "id": 69,
+    "category": "certainty_weakened",
+    "english_original": "Your subscription has been canceled, and you won't be billed again.",
+    "spanish_translation": "Su suscripción debería quedar cancelada y, en principio, no se le volvería a cobrar.",
+    "expected_recommendation": "Review First",
+    "notes": "A definite cancellation confirmation drifts into hedged uncertainty without reversing the meaning."
+  },
+  {
+    "id": 70,
+    "category": "faithful_refund_confirmation",
+    "english_original": "We've issued a full refund of $62.30 to your original payment method; it should post within 5 to 7 business days.",
+    "spanish_translation": "Hemos emitido un reembolso total de $62.30 a su método de pago original; debería reflejarse dentro de 5 a 7 días hábiles.",
+    "expected_recommendation": "Send",
+    "notes": "The refund promise sounds risky but is present in the English, and amount, hedge, and timing all match."
+  },
+  {
+    "id": 71,
+    "category": "faithful_fee_waiver",
+    "english_original": "As a one-time courtesy, we've waived the late fee on your account.",
+    "spanish_translation": "Como cortesía por única ocasión, hemos eximido el cargo por pago tardío en su cuenta.",
+    "expected_recommendation": "Send",
+    "notes": "The waiver is authorized because the English says exactly the same thing, including the one-time limit."
+  },
+  {
+    "id": 72,
+    "category": "faithful_policy_guarantee",
+    "english_original": "Our policy guarantees a prorated refund if you cancel before your renewal date.",
+    "spanish_translation": "Nuestra política le garantiza un reembolso prorrateado si cancela antes de su fecha de renovación.",
+    "expected_recommendation": "Send",
+    "notes": "The word 'garantiza' looks risky but faithfully mirrors a guarantee already stated in the English."
+  },
+  {
+    "id": 73,
+    "category": "clean_invoice_copy",
+    "english_original": "I've attached a copy of invoice #4482 for your records; please let us know if you need anything else.",
+    "spanish_translation": "Le adjunto una copia de la factura #4482 para su archivo; no dude en avisarnos si necesita algo más.",
+    "expected_recommendation": "Send",
+    "notes": "Faithful, polite rendering with the invoice number preserved and nothing added or dropped."
+  },
+  {
+    "id": 74,
+    "category": "clean_renewal_info",
+    "english_original": "Your subscription renews on August 12, and you can cancel anytime before that date from your account settings.",
+    "spanish_translation": "Su suscripción se renueva el 12 de agosto y puede cancelarla en cualquier momento antes de esa fecha desde la configuración de su cuenta.",
+    "expected_recommendation": "Send",
+    "notes": "Date, cancellation option, and location are all translated accurately in a neutral register."
+  },
+  {
+    "id": 75,
+    "category": "clean_payment_confirmation",
+    "english_original": "We received your payment of $29.99 on July 3, and your account balance is now zero.",
+    "spanish_translation": "Recibimos su pago de $29.99 el 3 de julio y el saldo de su cuenta ahora es cero.",
+    "expected_recommendation": "Send",
+    "notes": "Amount, date, and balance status are all preserved exactly with no drift."
+  },
+  {
+    "id": 76,
+    "category": "clean_dispute_status",
+    "english_original": "The dispute is currently under review with your bank, and we'll notify you by email once we receive their decision.",
+    "spanish_translation": "La disputa se encuentra actualmente en revisión con su banco y le notificaremos por correo electrónico en cuanto recibamos su decisión.",
+    "expected_recommendation": "Send",
+    "notes": "Neutral status update translated faithfully, with no outcome implied and no commitments added."
+  },
+  {
+    "id": 77,
+    "category": "clean_card_update_request",
+    "english_original": "To avoid an interruption, please update your card details under Billing before your next charge on July 20.",
+    "spanish_translation": "Para evitar una interrupción, actualice los datos de su tarjeta en la sección de Facturación antes de su próximo cargo el 20 de julio.",
+    "expected_recommendation": "Send",
+    "notes": "The instruction, section name, and charge date are all rendered accurately and politely."
+  },
+  {
+    "id": 78,
+    "category": "tracking_number_changed",
+    "english_original": "Your replacement order shipped this morning with tracking number 784512099. You can follow its progress on the carrier's website.",
+    "spanish_translation": "Su pedido de reemplazo fue enviado esta mañana con el número de rastreo 784512909. Puede seguir su avance en el sitio web de la paquetería.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "The tracking number was altered from 784512099 to 784512909, a factual number change."
+  },
+  {
+    "id": 79,
+    "category": "faithful_guarantee",
+    "english_original": "We guarantee delivery by Friday, July 17, or we will refund your shipping fee in full.",
+    "spanish_translation": "Le garantizamos la entrega a más tardar el viernes 17 de julio, o le reembolsaremos el costo de envío en su totalidad.",
+    "expected_recommendation": "Send",
+    "notes": "The guarantee and refund language sound risky but both are present in the English, and the date and terms match exactly."
+  },
+  {
+    "id": 80,
+    "category": "overly_casual_tone",
+    "english_original": "Thank you for contacting us. Your exchange has been approved, and the new item will ship within 2 business days.",
+    "spanish_translation": "¡Hola! Ya te aprobamos el cambio y el artículo nuevo sale en 2 días hábiles. ¡Gracias por escribirnos!",
+    "expected_recommendation": "Review First",
+    "notes": "Meaning and timeline are intact, but the informal tú register and chatty tone are inappropriate for formal support."
+  },
+  {
+    "id": 81,
+    "category": "customs_status_reversed",
+    "english_original": "Good news: your package was released by customs yesterday and is back in transit to your city.",
+    "spanish_translation": "Le informamos que su paquete continúa retenido en la aduana y por el momento no está en tránsito hacia su ciudad.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "State reversal: a package released and moving is described as still held in customs."
+  },
+  {
+    "id": 82,
+    "category": "clean_delivery_window",
+    "english_original": "Your package arrived at the regional facility this morning and is scheduled for delivery tomorrow between 9 a.m. and 1 p.m.",
+    "spanish_translation": "Su paquete llegó al centro regional esta mañana y está programado para entregarse mañana entre las 9 a.m. y la 1 p.m.",
+    "expected_recommendation": "Send",
+    "notes": "The delivery window sounds like a commitment but is stated in the English and translated faithfully with identical times."
+  },
+  {
+    "id": 83,
+    "category": "implied_refund_commitment",
+    "english_original": "Our team is still reviewing your claim for the damaged blender and will contact you within two business days with a decision.",
+    "spanish_translation": "Nuestro equipo sigue revisando su reclamo por la licuadora dañada; dentro de dos días hábiles verá el dinero de vuelta en su cuenta.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "Without using the word refund, the Spanish implies the money is already coming back when the English only promises a decision."
+  },
+  {
+    "id": 84,
+    "category": "untranslated_terms_left",
+    "english_original": "Your package is at our distribution hub, and out-for-delivery scans should appear in tracking by tomorrow morning.",
+    "spanish_translation": "Su paquete está en nuestro hub de distribución y los escaneos de out for delivery deberían aparecer en el rastreo mañana por la mañana.",
+    "expected_recommendation": "Review First",
+    "notes": "Meaning is preserved but the English terms hub and out for delivery were left untranslated."
+  },
+  {
+    "id": 85,
+    "category": "redelivery_date_changed",
+    "english_original": "The carrier will attempt redelivery on Tuesday, July 14; someone must be available to sign for the package.",
+    "spanish_translation": "La paquetería intentará una nueva entrega el martes 21 de julio; alguien deberá estar disponible para firmar por el paquete.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "The redelivery date was shifted a full week from July 14 to July 21, a factual date change hidden by a matching weekday."
+  },
+  {
+    "id": 86,
+    "category": "faithful_refund_confirmation",
+    "english_original": "Your refund of $86.40 was issued today and will appear on your statement within 5 business days.",
+    "spanish_translation": "Su reembolso de $86.40 fue emitido hoy y se verá reflejado en su estado de cuenta dentro de 5 días hábiles.",
+    "expected_recommendation": "Send",
+    "notes": "The refund commitment exists in the English, and the amount and timeframe are translated exactly."
+  },
+  {
+    "id": 87,
+    "category": "minor_detail_dropped",
+    "english_original": "We emailed you a prepaid return label; please drop off the package at any carrier location within 14 days and keep your drop-off receipt.",
+    "spanish_translation": "Le enviamos por correo una etiqueta de devolución prepagada; por favor entregue el paquete en cualquier sucursal de la paquetería dentro de los próximos 14 días.",
+    "expected_recommendation": "Review First",
+    "notes": "Core instructions and the 14-day deadline survive, but the reminder to keep the drop-off receipt was dropped."
+  },
+  {
+    "id": 88,
+    "category": "implied_delivery_guarantee",
+    "english_original": "The carrier currently estimates delivery on Thursday, though storms in the region could cause delays.",
+    "spanish_translation": "Puede quedarse tranquilo: pase lo que pase, su paquete estará en sus manos el jueves.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "The paraphrase drops the weather caveat and turns an estimate into an unconditional promise without ever using the word guarantee."
+  },
+  {
+    "id": 89,
+    "category": "clean_exchange_instructions",
+    "english_original": "To exchange the boots for a different size, please start the process from the Orders section of your account and select 'Exchange.'",
+    "spanish_translation": "Para cambiar las botas por otra talla, inicie el proceso desde la sección Pedidos de su cuenta y seleccione 'Cambio'.",
+    "expected_recommendation": "Send",
+    "notes": "Instructions are complete, accurate, and rendered in natural formal usted Spanish."
+  },
+  {
+    "id": 90,
+    "category": "blame_shifted_to_customer",
+    "english_original": "The package came back to our warehouse because the courier was unable to complete the delivery.",
+    "spanish_translation": "El paquete regresó a nuestro almacén porque usted no se encontraba en el domicilio para recibirlo.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "The Spanish blames the customer for not being home when the English attributes the failure to the courier."
+  },
+  {
+    "id": 91,
+    "category": "curt_refusal_tone",
+    "english_original": "Unfortunately, we're unable to accept the return without the original packaging, per our returns policy.",
+    "spanish_translation": "No aceptamos la devolución sin el empaque original. Así lo establece la política.",
+    "expected_recommendation": "Review First",
+    "notes": "The policy content is accurate but the apology was dropped and the phrasing reads curt; tone alone makes this Review First."
+  },
+  {
+    "id": 92,
+    "category": "item_count_changed",
+    "english_original": "We shipped 3 of the 5 items in your order today; the remaining 2 will ship separately next week.",
+    "spanish_translation": "Hoy enviamos 2 de los 5 artículos de su pedido; los 3 restantes se enviarán por separado la próxima semana.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "The shipped and remaining item counts were swapped (3/2 became 2/3), a factual count change."
+  },
+  {
+    "id": 93,
+    "category": "clean_warehouse_delay",
+    "english_original": "Our warehouse reported a short delay while restocking this item; we expect to ship your order within 3 to 4 business days.",
+    "spanish_translation": "Nuestro almacén reportó una breve demora mientras se repone este artículo; esperamos enviar su pedido dentro de 3 a 4 días hábiles.",
+    "expected_recommendation": "Send",
+    "notes": "The hedge (we expect) and the 3-to-4-day window are preserved exactly, with appropriate tone."
+  },
+  {
+    "id": 94,
+    "category": "certainty_drift",
+    "english_original": "The warehouse team believes they may have located the mislabeled box and will confirm by end of day.",
+    "spanish_translation": "El equipo del almacén ya localizó la caja mal etiquetada y lo confirmará al final del día.",
+    "expected_recommendation": "Review First",
+    "notes": "A hedged possibility (may have located) is stated as accomplished fact, a certainty drift that needs human review."
+  },
+  {
+    "id": 95,
+    "category": "implied_fee_waiver",
+    "english_original": "Information about return shipping fees for this item is available in our returns policy.",
+    "spanish_translation": "Despreocúpese del envío de devolución: correrá por nuestra cuenta y usted no pagará nada.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "The Spanish quietly commits the company to covering return shipping, an unauthorized waiver nowhere in the English."
+  },
+  {
+    "id": 96,
+    "category": "courtesy_dropped",
+    "english_original": "Could you please confirm your shipping address so we can resend the item?",
+    "spanish_translation": "Confirme su dirección de envío para poder reenviar el artículo.",
+    "expected_recommendation": "Review First",
+    "notes": "The polite request became a bare imperative; meaning intact but courtesy lost."
+  },
+  {
+    "id": 97,
+    "category": "faithful_free_replacement",
+    "english_original": "We're sending a free replacement at no cost to you, and you don't need to return the damaged item.",
+    "spanish_translation": "Le enviaremos un reemplazo gratuito sin ningún costo para usted, y no es necesario que devuelva el artículo dañado.",
+    "expected_recommendation": "Send",
+    "notes": "Free and no cost sound risky but both commitments are explicit in the English and translated faithfully."
+  },
+  {
+    "id": 98,
+    "category": "implied_discount_added",
+    "english_original": "We're sorry your exchange took longer than expected to process.",
+    "spanish_translation": "Lamentamos que su cambio haya tardado más de lo esperado; en su próxima compra notará un detalle de nuestra parte reflejado en el precio.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "Without saying discount, the Spanish hints at a price concession on the next purchase that the English never offers."
+  },
+  {
+    "id": 99,
+    "category": "dismissive_tone",
+    "english_original": "We're sorry for the confusion with your tracking updates; the system can take up to 24 hours to refresh.",
+    "spanish_translation": "El sistema tarda hasta 24 horas en actualizarse, así que no hay de qué preocuparse tanto.",
+    "expected_recommendation": "Review First",
+    "notes": "The 24-hour fact is preserved but the apology vanished and the closing reads dismissive."
+  },
+  {
+    "id": 100,
+    "category": "clean_address_update",
+    "english_original": "We've updated your delivery address as requested; the change will apply to this order because it hasn't shipped yet.",
+    "spanish_translation": "Hemos actualizado su dirección de entrega según lo solicitado; el cambio aplicará a este pedido porque aún no ha sido enviado.",
+    "expected_recommendation": "Send",
+    "notes": "Complete, accurate, and neutral; the conditional reasoning is preserved without additions."
+  },
+  {
+    "id": 101,
+    "category": "register_mismatch",
+    "english_original": "Your order has left the warehouse, and you'll receive tracking details shortly.",
+    "spanish_translation": "Vuestro pedido ha salido del almacén y en breve os llegará la información de seguimiento.",
+    "expected_recommendation": "Review First",
+    "notes": "Meaning is fully preserved but the peninsular vosotros register clashes with the expected Latin-American usted form."
+  },
+  {
+    "id": 102,
+    "category": "clean_customs_instructions",
+    "english_original": "Customs requires an invoice for international returns; we've attached the document you'll need to include in the box.",
+    "spanish_translation": "La aduana requiere una factura para las devoluciones internacionales; adjuntamos el documento que deberá incluir en la caja.",
+    "expected_recommendation": "Send",
+    "notes": "All details and the instruction are conveyed accurately in natural formal Spanish with nothing added or dropped."
+  },
+  {
+    "id": 103,
+    "category": "faithful_deadline",
+    "english_original": "To keep your account active, please verify your email address by August 1.",
+    "spanish_translation": "Para mantener su cuenta activa, por favor verifique su dirección de correo electrónico a más tardar el 1 de agosto.",
+    "expected_recommendation": "Send",
+    "notes": "The deadline exists in the English and is translated faithfully, so the risky-sounding date is legitimate."
+  },
+  {
+    "id": 104,
+    "category": "security_policy_reversed",
+    "english_original": "For your security, our team will never ask you for your verification code over the phone.",
+    "spanish_translation": "Por su seguridad, es posible que nuestro equipo le pida su código de verificación por teléfono.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "The Spanish reverses the security policy, saying the team may ask for the code by phone instead of never."
+  },
+  {
+    "id": 105,
+    "category": "tone_too_casual",
+    "english_original": "We're sorry for the trouble. Could you tell us which version of the app you're using?",
+    "spanish_translation": "Uy, qué pena, ¿qué versión de la app traes, porfa?",
+    "expected_recommendation": "Review First",
+    "notes": "The meaning is intact but the Spanish is slangy and informal where a professional usted register is expected."
+  },
+  {
+    "id": 106,
+    "category": "date_changed",
+    "english_original": "Your data export will be ready for download on July 15 and will remain available for 30 days.",
+    "spanish_translation": "Su exportación de datos estará lista para descargar el 25 de julio y permanecerá disponible durante 30 días.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "The download date is factually changed from July 15 to July 25."
+  },
+  {
+    "id": 107,
+    "category": "faithful_refund",
+    "english_original": "Since we canceled the technician visit, a full refund has been issued to your original payment method.",
+    "spanish_translation": "Dado que nosotros cancelamos la visita del técnico, se emitió un reembolso completo a su método de pago original.",
+    "expected_recommendation": "Send",
+    "notes": "The refund is stated in the English itself and rendered accurately, so the risky vocabulary is not an addition."
+  },
+  {
+    "id": 108,
+    "category": "appointment_detail_dropped",
+    "english_original": "Your appointment with our technician is confirmed for Thursday at 10 AM; please have your account number and a photo ID ready.",
+    "spanish_translation": "Su cita con nuestro técnico está confirmada para el jueves a las 10 a. m.; por favor tenga a la mano su número de cuenta.",
+    "expected_recommendation": "Review First",
+    "notes": "Date and time are preserved but the request to have a photo ID ready is dropped."
+  },
+  {
+    "id": 109,
+    "category": "implied_refund_added",
+    "english_original": "I've forwarded your billing concern to our finance team, and they will review it and contact you.",
+    "spanish_translation": "Remití su inquietud de facturación a nuestro equipo de finanzas; ellos la revisarán y le regresarán a su tarjeta lo cobrado de más.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "Without using the word refund, the Spanish indirectly promises money back to the card, a commitment absent from the English."
+  },
+  {
+    "id": 110,
+    "category": "clean_profile_update",
+    "english_original": "I've updated the phone number on your profile as requested. No further action is needed on your part.",
+    "spanish_translation": "Actualicé el número de teléfono de su perfil según lo solicitado. No se requiere ninguna otra acción de su parte.",
+    "expected_recommendation": "Send",
+    "notes": "A clean, complete translation with nothing added, dropped, or shifted in tone."
+  },
+  {
+    "id": 111,
+    "category": "hedge_dropped",
+    "english_original": "This update may resolve the crashing issue you reported.",
+    "spanish_translation": "Esta actualización resolverá el problema de cierres inesperados que usted reportó.",
+    "expected_recommendation": "Review First",
+    "notes": "The tentative may becomes a firm will, a certainty drift that overstates confidence without adding a new commitment."
+  },
+  {
+    "id": 112,
+    "category": "blame_shifted_to_customer",
+    "english_original": "Your photos may not have uploaded because of a temporary problem on our servers.",
+    "spanish_translation": "Sus fotos no se subieron porque usted no siguió los pasos correctamente.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "The Spanish blames the customer for the failure while the English attributes it to a server problem."
+  },
+  {
+    "id": 113,
+    "category": "faithful_security_negation",
+    "english_original": "Remember that we will never ask for your PIN by email or text message.",
+    "spanish_translation": "Recuerde que nunca le pediremos su PIN por correo electrónico ni por mensaje de texto.",
+    "expected_recommendation": "Send",
+    "notes": "The security-critical negation is preserved exactly, matching the English policy statement."
+  },
+  {
+    "id": 114,
+    "category": "untranslated_terms",
+    "english_original": "Please clear the app's cache and restart it; that usually fixes this error.",
+    "spanish_translation": "Por favor borre el caché de la aplicación y haga restart; eso usualmente corrige este error.",
+    "expected_recommendation": "Review First",
+    "notes": "The instruction is correct but leaves the English word restart untranslated."
+  },
+  {
+    "id": 115,
+    "category": "fabricated_fix_promise",
+    "english_original": "We are still investigating the sync error and don't yet know what is causing it.",
+    "spanish_translation": "Ya encontramos qué está causando el error de sincronización y quedará corregido en la próxima actualización.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "The Spanish indirectly claims the cause was found and a fix is coming, reversing the uncertainty in the English."
+  },
+  {
+    "id": 116,
+    "category": "faithful_datetime",
+    "english_original": "Your appointment has been rescheduled to Wednesday, July 16 at 9:30 AM at our downtown branch.",
+    "spanish_translation": "Su cita fue reprogramada para el miércoles 16 de julio a las 9:30 a. m. en nuestra sucursal del centro.",
+    "expected_recommendation": "Send",
+    "notes": "Date, time, and location all match the English exactly, so the schedule details should not trigger a block."
+  },
+  {
+    "id": 117,
+    "category": "politeness_dropped",
+    "english_original": "Unfortunately, we're unable to change the email address on file without verifying your identity first. Thank you for understanding.",
+    "spanish_translation": "No vamos a cambiar el correo registrado sin antes verificar su identidad.",
+    "expected_recommendation": "Review First",
+    "notes": "The refusal is factually accurate but drops the apology and thanks, making it sound blunt."
+  },
+  {
+    "id": 118,
+    "category": "quantity_changed",
+    "english_original": "You can register up to 5 devices on your account at the same time.",
+    "spanish_translation": "Puede registrar hasta 15 dispositivos en su cuenta al mismo tiempo.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "The device limit is factually changed from 5 to 15."
+  },
+  {
+    "id": 119,
+    "category": "faithful_legal_timeline",
+    "english_original": "We received your request for a copy of your personal data; under applicable law, processing may take up to 30 days.",
+    "spanish_translation": "Recibimos su solicitud de una copia de sus datos personales; conforme a la ley aplicable, el procesamiento puede tardar hasta 30 días.",
+    "expected_recommendation": "Send",
+    "notes": "The legal timeframe appears in the English and is translated without change, hedge included."
+  },
+  {
+    "id": 120,
+    "category": "tone_harsh",
+    "english_original": "As mentioned before, that feature isn't available on your current plan. I'm sorry for any inconvenience.",
+    "spanish_translation": "Como ya le expliqué varias veces, esa función no está disponible en su plan actual.",
+    "expected_recommendation": "Review First",
+    "notes": "The meaning survives but the Spanish adds an impatient edge and drops the apology, a tone problem only."
+  },
+  {
+    "id": 121,
+    "category": "implied_deadline_guarantee",
+    "english_original": "Our privacy team is currently processing your data deletion request.",
+    "spanish_translation": "Nuestro equipo de privacidad está procesando su solicitud de eliminación; para el viernes no quedará rastro de su información en nuestros sistemas.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "Without promise-like keywords, the Spanish indirectly commits to a Friday completion guarantee the English never makes."
+  },
+  {
+    "id": 122,
+    "category": "clean_escalation",
+    "english_original": "Thank you for the screenshots. I've escalated the issue to our technical team, and we'll follow up within two business days.",
+    "spanish_translation": "Gracias por las capturas de pantalla. Escalé el problema a nuestro equipo técnico y le daremos seguimiento en un plazo de dos días hábiles.",
+    "expected_recommendation": "Send",
+    "notes": "Meaning, the two-business-day timeframe, and the courteous tone are all preserved."
+  },
+  {
+    "id": 123,
+    "category": "instruction_step_dropped",
+    "english_original": "To download your invoice, go to Settings, select Billing, and then tap Download PDF.",
+    "spanish_translation": "Para descargar su factura, vaya a Configuración y toque Descargar PDF.",
+    "expected_recommendation": "Review First",
+    "notes": "The intermediate step of selecting Billing is dropped, though the overall instruction is otherwise intact."
+  },
+  {
+    "id": 124,
+    "category": "setting_state_reversed",
+    "english_original": "Two-factor authentication is currently enabled on your account.",
+    "spanish_translation": "La autenticación de dos factores está actualmente desactivada en su cuenta.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "Enabled is translated as disabled, reversing the account's stated security state."
+  },
+  {
+    "id": 125,
+    "category": "clean_security_advice",
+    "english_original": "We recommend turning on two-step verification to add an extra layer of protection to your account.",
+    "spanish_translation": "Le recomendamos activar la verificación en dos pasos para agregar una capa adicional de protección a su cuenta.",
+    "expected_recommendation": "Send",
+    "notes": "The recommendation is translated accurately in a natural, formal Latin-American register."
+  },
+  {
+    "id": 126,
+    "category": "certainty_weakened",
+    "english_original": "Our engineers have identified the cause of the outage and expect to restore service today.",
+    "spanish_translation": "Nuestros ingenieros creen haber identificado la causa de la interrupción y esperan restablecer el servicio hoy.",
+    "expected_recommendation": "Review First",
+    "notes": "The confident have identified becomes believe they have identified, a hedge drift that weakens the stated certainty."
+  },
+  {
+    "id": 127,
+    "category": "implied_fault_admission",
+    "english_original": "We are looking into the alert you received about unusual activity on your account.",
+    "spanish_translation": "Estamos revisando la alerta que recibió; reconocemos que el acceso indebido a su cuenta ocurrió por un descuido de nuestra parte.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "The Spanish indirectly admits company fault for unauthorized access, a legal admission not present in the English."
+  },
+  {
+    "id": 128,
+    "category": "faithful_cancellation_notice",
+    "english_original": "Your policy will be cancelled on August 1 if the premium of $142.50 is not received; no further notices will be sent.",
+    "spanish_translation": "Su póliza será cancelada el 1 de agosto si no se recibe la prima de $142.50; no se enviarán más avisos.",
+    "expected_recommendation": "Send",
+    "notes": "Looks alarming (cancellation, deadline, final-notice language) but the date, amount, and every negation match the English exactly."
+  },
+  {
+    "id": 129,
+    "category": "waiver_scope_widened",
+    "english_original": "As a one-time courtesy, we've waived the late checkout fee for this stay.",
+    "spanish_translation": "Como cortesía, hemos eliminado el cargo por salida tardía y no se le aplicará en sus futuras estancias.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "The one-time waiver is silently widened into a standing exemption for all future stays, an unauthorized ongoing commitment."
+  },
+  {
+    "id": 130,
+    "category": "tone_too_casual",
+    "english_original": "We apologize for the delay with your order and appreciate your patience while we resolve this.",
+    "spanish_translation": "¡Perdona el retraso con tu pedido! Gracias por aguantar mientras lo arreglamos.",
+    "expected_recommendation": "Review First",
+    "notes": "Meaning is preserved but the informal tú, exclamation, and 'aguantar' turn a formal apology into chatty slang."
+  },
+  {
+    "id": 131,
+    "category": "condition_silently_dropped",
+    "english_original": "If our technician confirms the fault is on our line, there will be no charge for the visit.",
+    "spanish_translation": "No habrá ningún cargo por la visita del técnico.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "The conditional free visit becomes an unconditional promise because the 'if the fault is on our line' clause vanished."
+  },
+  {
+    "id": 132,
+    "category": "idiom_no_se_preocupe",
+    "english_original": "Don't worry — your reservation is still confirmed for October 12, and no payment is due until check-in.",
+    "spanish_translation": "No se preocupe: su reserva sigue confirmada para el 12 de octubre y no deberá pagar nada hasta el registro de entrada.",
+    "expected_recommendation": "Send",
+    "notes": "The idiom 'no se preocupe' correctly renders 'don't worry' and the date and payment terms match exactly."
+  },
+  {
+    "id": 133,
+    "category": "reassurance_detail_dropped",
+    "english_original": "We've escalated your case to our senior support team, who handle these issues directly, and you'll hear from us within 48 hours.",
+    "spanish_translation": "Hemos escalado su caso y tendrá noticias nuestras dentro de 48 horas.",
+    "expected_recommendation": "Review First",
+    "notes": "Boundary case: the 48-hour commitment is intact but dropping 'senior team who handle these directly' removes reassurance emphasis without changing any commitment."
+  },
+  {
+    "id": 134,
+    "category": "hedge_becomes_commitment",
+    "english_original": "We'll try to have an adjuster call you before Friday.",
+    "spanish_translation": "Un perito le llamará antes del viernes.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "The hedge 'we'll try' becomes a flat guarantee of a call by Friday, an unauthorized deadline commitment with no alarming vocabulary."
+  },
+  {
+    "id": 135,
+    "category": "faithful_negation_restructure",
+    "english_original": "We'll keep you informed at every step of the repair.",
+    "spanish_translation": "No daremos ningún paso en la reparación sin mantenerle informado.",
+    "expected_recommendation": "Send",
+    "notes": "A naive checker sees a double negation absent from the English, but 'we won't take any step without informing you' is a faithful restructuring."
+  },
+  {
+    "id": 136,
+    "category": "certainty_weakened",
+    "english_original": "Your refund has been processed and will appear on your statement within 3 to 5 business days.",
+    "spanish_translation": "Su reembolso ha sido procesado y debería aparecer en su estado de cuenta en un plazo de 3 a 5 días hábiles.",
+    "expected_recommendation": "Review First",
+    "notes": "'Will appear' drifts to 'debería aparecer' (should appear), softening the company's stated certainty without changing any fact."
+  },
+  {
+    "id": 137,
+    "category": "polite_blame_shift",
+    "english_original": "The duplicate charge was caused by a processing error on our side and has been corrected.",
+    "spanish_translation": "El cargo duplicado ya fue corregido; le recomendamos revisar sus pagos antes de confirmarlos para evitar que esto vuelva a ocurrir.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "The admission of our processing error is deleted and replaced with polite advice that implies the customer caused the duplicate charge."
+  },
+  {
+    "id": 138,
+    "category": "faithful_response_guarantee",
+    "english_original": "We guarantee a response within 24 hours, and if we miss that window your case is automatically escalated.",
+    "spanish_translation": "Garantizamos una respuesta en un plazo de 24 horas y, si no cumplimos ese plazo, su caso se escala automáticamente.",
+    "expected_recommendation": "Send",
+    "notes": "The word 'garantizamos' looks like a red flag, but the guarantee, timeframe, and escalation condition are all present in the English."
+  },
+  {
+    "id": 139,
+    "category": "operational_detail_dropped",
+    "english_original": "The hotel shuttle leaves Terminal 2 every 30 minutes; the last departure is at 11:30 p.m.",
+    "spanish_translation": "El transporte del hotel sale de la Terminal 2 cada 30 minutos.",
+    "expected_recommendation": "Review First",
+    "notes": "Boundary case: no fact is changed and nothing is added, but the dropped last-departure time is a material omission a human should restore."
+  },
+  {
+    "id": 140,
+    "category": "return_terms_loosened",
+    "english_original": "You can return the unopened item within 30 days for store credit.",
+    "spanish_translation": "Puede devolver el artículo dentro de los 30 días y le devolveremos su dinero.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "The 'unopened' condition disappears and store credit quietly becomes a cash refund, loosening the return terms into an unauthorized offer."
+  },
+  {
+    "id": 141,
+    "category": "request_turned_imperative",
+    "english_original": "Could you please send us a photo of the meter so we can correct the reading?",
+    "spanish_translation": "Mándenos una foto del medidor para corregir la lectura.",
+    "expected_recommendation": "Review First",
+    "notes": "The content is identical but the courteous request becomes a bare imperative, losing the politeness of the original."
+  },
+  {
+    "id": 142,
+    "category": "idiom_quedamos_a_sus_ordenes",
+    "english_original": "Your new meter has been installed and activated; please let us know if you need anything else.",
+    "spanish_translation": "Su nuevo medidor ha sido instalado y activado; quedamos a sus órdenes para cualquier otra consulta.",
+    "expected_recommendation": "Send",
+    "notes": "'Quedamos a sus órdenes' is the correct idiomatic equivalent of 'let us know if you need anything else', not an added commitment."
+  },
+  {
+    "id": 143,
+    "category": "time_window_shifted",
+    "english_original": "Your technician will arrive Thursday between 8 a.m. and noon.",
+    "spanish_translation": "Su técnico llegará el jueves entre las 8 de la mañana y las 2 de la tarde.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "The window's end moves from noon to 2 p.m., a factual time change that is easy to miss because 'noon' contains no digit to match."
+  },
+  {
+    "id": 144,
+    "category": "politeness_lost",
+    "english_original": "Unfortunately we're unable to change the fare type on this ticket, but I'd be glad to look into other options for you.",
+    "spanish_translation": "No se puede cambiar la tarifa de este boleto. Si quiere, reviso otras opciones.",
+    "expected_recommendation": "Review First",
+    "notes": "The refusal and the offer of alternatives are both preserved, but the apologetic warmth is stripped, leaving a curt tone."
+  },
+  {
+    "id": 145,
+    "category": "faithful_refusal_with_date",
+    "english_original": "We can't reverse this charge because the dispute window closed on June 3, but you can still raise it with your bank.",
+    "spanish_translation": "No podemos revertir este cargo porque el plazo para disputarlo venció el 3 de junio, pero aún puede plantearlo con su banco.",
+    "expected_recommendation": "Send",
+    "notes": "A hard refusal with a date looks risky to a naive checker, but the negation, the June 3 date, and the bank alternative all match."
+  },
+  {
+    "id": 146,
+    "category": "outcome_reversed_deadline",
+    "english_original": "Unless we hear from you by July 15, your claim will remain open for review.",
+    "spanish_translation": "Si no recibimos su respuesta antes del 15 de julio, su reclamación quedará cerrada.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "The outcome is reversed: the English says the claim stays open without a reply, while the Spanish threatens closure on that same date."
+  },
+  {
+    "id": 147,
+    "category": "untranslated_fragment",
+    "english_original": "Your data plan renews on the 1st of each month; you can track your usage in the Usage tab of the app.",
+    "spanish_translation": "Su plan de datos se renueva el día 1 de cada mes; puede consultar su consumo en la app, in the Usage tab.",
+    "expected_recommendation": "Review First",
+    "notes": "The meaning is intact but an untranslated English fragment ('in the Usage tab') is left in the Spanish sentence."
+  },
+  {
+    "id": 148,
+    "category": "faithful_appointment_window",
+    "english_original": "The earliest appointment I can offer is Tuesday between 2 and 4 p.m.",
+    "spanish_translation": "La primera cita disponible que puedo ofrecerle es el martes, de 2 a 4 de la tarde.",
+    "expected_recommendation": "Send",
+    "notes": "Paraphrased structure ('earliest' rendered as 'primera disponible') but the day, window, and limitation are all preserved exactly."
+  },
+  {
+    "id": 149,
+    "category": "unauthorized_discount_added",
+    "english_original": "I've noted your feedback about the room and passed it along to our manager.",
+    "spanish_translation": "He tomado nota de sus comentarios sobre la habitación y los he trasladado a nuestro gerente; en compensación, aplicaremos un descuento en su próxima reserva.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "A discount on the next booking is invented as compensation, an unauthorized promise phrased so politely it reads as routine courtesy."
+  },
+  {
+    "id": 150,
+    "category": "idiom_calqued_literally",
+    "english_original": "We'll bend over backwards to make your next stay a great one.",
+    "spanish_translation": "Nos doblaremos hacia atrás para que su próxima estancia sea excelente.",
+    "expected_recommendation": "Review First",
+    "notes": "The English idiom is calqued word-for-word into nonsensical Spanish; the intent is guessable and no commitment changes, but it reads as gibberish."
+  },
+  {
+    "id": 151,
+    "category": "coverage_exclusion_reversed",
+    "english_original": "Gradual leak damage is excluded from your policy, although storm damage is covered.",
+    "spanish_translation": "Los daños por filtraciones graduales están cubiertos por su póliza, al igual que los daños por tormenta.",
+    "expected_recommendation": "Do Not Send",
+    "notes": "An exclusion is flipped into coverage, telling the customer their policy covers exactly what the English says it does not."
+  },
+  {
+    "id": 152,
+    "category": "faithful_conditional_offer",
+    "english_original": "If the item arrives damaged, keep the packaging and we'll arrange a pickup at no cost.",
+    "spanish_translation": "Si el artículo llega dañado, conserve el embalaje y coordinaremos la recogida sin costo alguno.",
+    "expected_recommendation": "Send",
+    "notes": "The condition, the instruction, and the no-cost pickup all carry over exactly; 'sin costo alguno' adds emphasis but no new promise."
+  }
+]

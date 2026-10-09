@@ -1,0 +1,27 @@
+{
+  "cleaned_description": "The customer has been unable to log in since this morning. They have attempted to use the password reset function, which has not resolved the issue. It is possible that the email address on the account is incorrect, which may be preventing the reset email from being received. The customer requires urgent assistance.",
+  "short_summary": "Customer is unable to log in and the password reset process is not working, possibly due to an incorrect email address on the account.",
+  "issue_type": "Login",
+  "customer_impact": "The customer has been locked out of their account since this morning and is unable to access the service.",
+  "technical_details": [
+    "Password reset function",
+    "Customer email address (potentially incorrect on account)"
+  ],
+  "missing_information": [
+    "Customer account identifier (username, account number, or registered email address)",
+    "Exact error message displayed during login or password reset attempt",
+    "Confirmation of which email address the customer believes is registered",
+    "Platform or application being used (web, mobile app, etc.)",
+    "Whether the password reset email was checked in spam or junk folders"
+  ],
+  "suggested_next_step": "Verify the email address registered to the customer's account. If incorrect, update it following the account amendment process and re-trigger the password reset. Confirm the customer receives the reset email before closing the interaction.",
+  "tone_adjustment": "The original note contained informal language ('cust', 'cant') and an emotional qualifier ('very upset'). These have been replaced with professional, neutral language. The urgency has been preserved by noting the customer requires prompt assistance, without referencing their emotional state.",
+  "ml_tags": [
+    "login_issue",
+    "password_reset",
+    "account_access",
+    "email_verification",
+    "urgent"
+  ],
+  "confidence_score": 42
+}

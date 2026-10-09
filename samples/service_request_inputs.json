@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "case": "Messy customer service note",
+    "text": "cust says cant login been trying since morning says password reset not working maybe email wrong needs help asap very upset"
+  },
+  {
+    "id": 2,
+    "case": "Technical developer comment",
+    "text": "checkout api returning 500 on POST /orders when promo code applied, looks like null pointer in DiscountService.calc, only happens for orders over $200, added temp logging"
+  },
+  {
+    "id": 3,
+    "case": "Emotional / frustrated language",
+    "text": "this is the THIRD time im writing in and nobody has fixed my refund its been 2 weeks i am absolutely furious you people are useless just give me my money back"
+  },
+  {
+    "id": 4,
+    "case": "Missing details",
+    "text": "payment didnt go through, please fix"
+  },
+  {
+    "id": 5,
+    "case": "Very short input",
+    "text": "app keeps crashing"
+  },
+  {
+    "id": 6,
+    "case": "Blank input",
+    "text": ""
+  },
+  {
+    "id": 7,
+    "case": "Mixed issue types",
+    "text": "i cant log in and also my last order never arrived and i think i was double charged for it, also the rewards points from that order are missing"
+  }
+]

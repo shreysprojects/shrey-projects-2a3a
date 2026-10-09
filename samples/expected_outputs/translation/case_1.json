@@ -1,0 +1,13 @@
+{
+  "short_summary": "Safe to send: the Spanish is accurate and professional.",
+  "accuracy_rating": "High",
+  "confidence_score": 97,
+  "tone_check": "Professional",
+  "risky_phrases": [],
+  "missing_meaning": [],
+  "added_meaning": [],
+  "suggested_correction": "",
+  "back_translation": "We are sorry that your order has been delayed. Send us your order number to review the issue.",
+  "send_recommendation": "Send",
+  "explanation": "The Spanish translation accurately and professionally conveys the full meaning of the original English message with no missing or added content. Tone is appropriate for customer service."
+}
